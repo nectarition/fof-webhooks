@@ -14,16 +14,16 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        if ($schema->hasColumn('webhooks', 'extra_text')) {
+        if ($schema->hasColumn('nct-webhooks', 'extra_text')) {
             return;
         }
 
-        $schema->table('webhooks', function (Blueprint $table) {
+        $schema->table('nct-webhooks', function (Blueprint $table) {
             $table->string('extra_text', 256)->nullable();
         });
     },
     'down' => function (Builder $schema) {
-        $schema->table('webhooks', function (Blueprint $table) {
+        $schema->table('nct-webhooks', function (Blueprint $table) {
             $table->dropColumn('extra_text');
         });
     },

@@ -39,7 +39,7 @@ export default class WebhooksPage extends ExtensionPage {
     }
 
     content() {
-        const webhooks = app.store.all('webhooks');
+        const webhooks = app.store.all('nct-webhooks');
 
         if (this.loadingTags) {
             return <LoadingIndicator />;
@@ -103,7 +103,7 @@ export default class WebhooksPage extends ExtensionPage {
         this.newWebhook.loading(true);
 
         return app.store
-            .createRecord('webhooks')
+            .createRecord('nct-webhooks')
             .save({
                 service: this.newWebhook.service(),
                 url: this.newWebhook.url(),
