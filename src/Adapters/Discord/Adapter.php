@@ -61,8 +61,6 @@ class Adapter extends \FoF\Webhooks\Adapters\Adapter
      */
     public function toArray(Response $response): array
     {
-        resolve('log')->debug('[fof/webhooks] '.$response);
-        
         return [
             'title'       => substr($response->title, 0, 256),
             'url'         => $response->url,
@@ -73,7 +71,7 @@ class Adapter extends \FoF\Webhooks\Adapters\Adapter
                 'icon_url' => $response->author->avatar_url,
             ] : null,
             'color'     => $response->getColor(),
-            // 'timestamp' => $response->timestamp ?? date('c'),
+            'timestamp' => $response->timestamp ?? date('c'),
             'type'      => 'rich',
         ];
     }
