@@ -14,12 +14,12 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        $schema->table('nct_webhooks', function (Blueprint $table) {
+        $schema->table('webhooks', function (Blueprint $table) {
             $table->unsignedInteger('tag_id')->nullable();
         });
     },
     'down' => function (Builder $schema) {
-        $schema->table('nct_webhooks', function (Blueprint $table) {
+        $schema->table('webhooks', function (Blueprint $table) {
             $table->dropColumn('tag_id');
         });
     },

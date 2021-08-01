@@ -35,7 +35,7 @@ class Webhook extends AbstractModel
     /**
      * {@inheritdoc}
      */
-    protected $table = 'nct_webhooks';
+    protected $table = 'webhooks';
 
     /**
      * @param string $service

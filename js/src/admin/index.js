@@ -7,7 +7,7 @@ import WebhooksPage from './components/WebhooksPage'
 app.initializers.add('nct/webhooks', () => {
   app.store.models.webhooks = Webhook
 
-  Forum.prototype.webhooks = Model.hasMany('nct_webhooks')
+  Forum.prototype.webhooks = Model.hasMany('webhooks')
 
   app.extensionData.for('nct-webhooks').registerPage(WebhooksPage)
 })
