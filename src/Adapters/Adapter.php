@@ -142,8 +142,8 @@ abstract class Adapter
     protected function request(string $url, array $json): ResponseInterface
     {
         resolve('log')->debug('[fof/webhooks/array] '.$json);
-        resolve('log')->debug('[fof/webhooks/encoding] '.mb_convert_encoding('UTF-8', 'UTF-8', $json));
-        echo mb_convert_encoding('UTF-8', 'UTF-8', $json);
+        resolve('log')->debug('[fof/webhooks/encoding] '.mb_convert_encoding($json, 'UTF-8', 'UTF-8'));
+        echo mb_convert_encoding($json, 'UTF-8', 'UTF-8');
 
         return $this->client->request('POST', $url, [
             'json'            => mb_convert_encoding('UTF-8', 'UTF-8', $json),
