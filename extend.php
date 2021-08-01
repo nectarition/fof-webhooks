@@ -39,10 +39,10 @@ return [
         ->delete('/fof/webhooks/{id}', 'fof.webhooks.delete', Api\Controller\DeleteWebhookController::class),
 
     (new Extend\ApiSerializer(ForumSerializer::class))
-        ->hasMany('nct-webhooks', WebhookSerializer::class),
+        ->hasMany('nct_webhooks', WebhookSerializer::class),
 
     (new Extend\ApiController(ShowForumController::class))
-        ->addInclude('nct-webhooks')
+        ->addInclude('nct_webhooks')
         ->prepareDataForSerialization(function (ShowForumController $controller, &$data, ServerRequestInterface $request) {
             $actor = $request->getAttribute('actor');
 

@@ -20,7 +20,7 @@ class WebhookSerializer extends AbstractSerializer
     /**
      * {@inheritdoc}
      */
-    protected $type = 'nct-webhooks';
+    protected $type = 'nct_webhooks';
 
     /**
      * {@inheritdoc}

@@ -15,11 +15,11 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        if ($schema->hasTable('nct-webhooks')) {
+        if ($schema->hasTable('nct_webhooks')) {
             return;
         }
 
-        $schema->create('nct-webhooks', function (Blueprint $table) {
+        $schema->create('nct_webhooks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('service');
             $table->string('url');
@@ -30,6 +30,6 @@ return [
         });
     },
     'down' => function (Builder $schema) {
-        $schema->drop('nct-webhooks');
+        $schema->drop('nct_webhooks');
     },
 ];

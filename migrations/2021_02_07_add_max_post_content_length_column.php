@@ -14,12 +14,12 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        $schema->table('nct-webhooks', function (Blueprint $table) {
+        $schema->table('nct_webhooks', function (Blueprint $table) {
             $table->unsignedInteger('max_post_content_length')->nullable();
         });
     },
     'down' => function (Builder $schema) {
-        $schema->table('nct-webhooks', function (Blueprint $table) {
+        $schema->table('nct_webhooks', function (Blueprint $table) {
             $table->dropColumn('max_post_content_length');
         });
     },

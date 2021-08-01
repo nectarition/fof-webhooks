@@ -14,12 +14,12 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        $schema->table('nct-webhooks', function (Blueprint $table) {
+        $schema->table('nct_webhooks', function (Blueprint $table) {
             $table->boolean('use_plain_text');
         });
     },
     'down' => function (Builder $schema) {
-        $schema->table('nct-webhooks', function (Blueprint $table) {
+        $schema->table('nct_webhooks', function (Blueprint $table) {
             $table->dropColumn('use_plain_text');
         });
     },
