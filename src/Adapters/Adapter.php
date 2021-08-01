@@ -143,6 +143,7 @@ abstract class Adapter
     {
         resolve('log')->debug('[fof/webhooks/array] '.$json);
         resolve('log')->debug('[fof/webhooks/encoding] '.mb_convert_encoding('UTF-8', 'UTF-8', $json));
+        echo mb_convert_encoding('UTF-8', 'UTF-8', $json);
 
         return $this->client->request('POST', $url, [
             'json'            => mb_convert_encoding('UTF-8', 'UTF-8', $json),
