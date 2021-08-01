@@ -67,8 +67,6 @@ class UpdateWebhookHandler
             $webhook->error = null;
         }
         if (isset($events)) {
-            mb_convert_variables('UTF-8', 'UTF-8', $events);
-            var_dump($events);
             $webhook->events = is_array($events) ? json_encode($events) : $events;
         }
         if (isset($groupId)) {
